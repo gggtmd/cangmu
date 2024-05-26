@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+}
+
+#app {
+  min-width: 1200px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  /*color: #FFF;*/
+}
+
+a:hover {
+  color: #37B5F8;
+}
