@@ -27,6 +27,12 @@ import __processing_3_png from "./processing_3.png";
 import __processing_4_png from "./processing_4.png";
 import __processing_5_png from "./processing_5.png";
 import __processing_6_png from "./processing_6.png";
+import __processing_hover_1_png from "./processing_hover_1.png";
+import __processing_hover_2_png from "./processing_hover_2.png";
+import __processing_hover_3_png from "./processing_hover_3.png";
+import __processing_hover_4_png from "./processing_hover_4.png";
+import __processing_hover_5_png from "./processing_hover_5.png";
+import __processing_hover_6_png from "./processing_hover_6.png";
 
 import __home_honor_png from "./home_honor.png";
 
@@ -72,6 +78,14 @@ export default {
     __processing_4_png,
     __processing_5_png,
     __processing_6_png
+  ],
+  processingHover: [
+    __processing_hover_1_png,
+    __processing_hover_2_png,
+    __processing_hover_3_png,
+    __processing_hover_4_png,
+    __processing_hover_5_png,
+    __processing_hover_6_png
   ],
   homeHonor: __home_honor_png,
   appAds: [

@@ -1,6 +1,7 @@
 <script setup>
 import DividerTitle from "@/views/home/components/DividerTitle.vue";
 import assets from "@/views/home/assets/index.js";
+import {ref} from "vue";
 
 const processingList = [
   {
@@ -28,6 +29,9 @@ const processingList = [
     info: '开心拿本，安全驾驶'
   },
 ]
+
+// 学车流程hoverIndex
+const hoverIndex = ref(null)
 </script>
 
 <template>
@@ -35,9 +39,20 @@ const processingList = [
     <divider-title text="学车流程"></divider-title>
     <p class="title">驾考宝典整合学车全流程，驾考宝典为用户提供全方位学车服务</p>
     <ul class="content">
-      <li v-for="(processing, processingIndex) in processingList">
+      <li
+        class="processing-item"
+        v-for="(processing, processingIndex) in processingList"
+        :key="processingIndex"
+        @mouseenter="hoverIndex = processingIndex"
+        @mouseleave="hoverIndex = null"
+      >
         <a>
-          <img :src="assets.processing[processingIndex]">
+          <img
+            :src="
+              hoverIndex === processingIndex ?
+              assets.processingHover[processingIndex] :
+              assets.processing[processingIndex]"
+            alt="">
           <p class="title">{{processing.text}}</p>
           <p class="info">{{processing.info}}</p>
         </a>
@@ -65,15 +80,25 @@ const processingList = [
     justify-content: space-between;
     text-align: center;
 
-    .title {
-      color: #333;
-      font-size: 24px;
-      margin: 20px 0 0;
-    }
+    .processing-item {
+      cursor: pointer;
 
-    .info {
-      color: #999;
-      margin-top: 10px;
+      .title {
+        color: #333;
+        font-size: 24px;
+        margin: 20px 0 0;
+      }
+
+      .info {
+        color: #999;
+        margin-top: 10px;
+      }
+
+      &:hover {
+        .title {
+          color: #37B5F8;
+        }
+      }
     }
   }
 }
